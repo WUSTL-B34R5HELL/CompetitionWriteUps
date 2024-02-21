@@ -44,7 +44,7 @@ I looked up ImageMagick -encipher and found this [doc](https://imagemagick.org/s
 
 The doc specifically warns against key reuse and tells us that the encrpytion uses AES-CTR block encryption. I looked up the chaining scheme and found that CTR uses a nonce, counter, and key to basically generate a stream key that is XORed with the plaintext. 
 
-<img src="https://bernardoamc.com/4d9317e0640a84dba1dc08ad8adc3d8a/ctr_encryption.svg">
+<img style="background-color: black", src="https://bernardoamc.com/4d9317e0640a84dba1dc08ad8adc3d8a/ctr_encryption.svg">
 
 Since the password is used to generate the nonce and key, both images uses the same stream key, meaning if we XOR the two encrypted images together, we will get back the two plaintexts XORed together. I performed these operations using this [script](attack.py), giving the following file with a discernible flag.
 

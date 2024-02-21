@@ -2,7 +2,7 @@
 
 ## Infinite Loop
 
-This challenge links us to a google [form] (https://docs.google.com/forms/d/e/1FAIpQLSfgUDWRzgkSC2pppOx_SVdw1E9bpVVWUkvQssmWza11pufMUQ/viewform?usp=sf_link). If we fill out the form and keep clicking next, we never progress in the form. 
+This challenge links us to a google [form](https://docs.google.com/forms/d/e/1FAIpQLSfgUDWRzgkSC2pppOx_SVdw1E9bpVVWUkvQssmWza11pufMUQ/viewform?usp=sf_link). If we fill out the form and keep clicking next, we never progress in the form. 
 
 <img src="images/infinite-loop.png">
 
@@ -13,7 +13,7 @@ By inspecting the source of the form and searching for "lactf", we find the flag
 
 ## One by one
 
-This challenge links another google [form] (https://docs.google.com/forms/d/e/1FAIpQLSc-A-Vmx_Te-bAqnu3TrRj-DAsYTgn52uSk92v3fECQb3T83A/viewform). This time the form asks us for 29 letters, each letter being its own question. 
+This challenge links another google [form](https://docs.google.com/forms/d/e/1FAIpQLSc-A-Vmx_Te-bAqnu3TrRj-DAsYTgn52uSk92v3fECQb3T83A/viewform). This time the form asks us for 29 letters, each letter being its own question. 
 
 <img src="images/one-by-one.png">
 
@@ -44,7 +44,7 @@ I looked up ImageMagick -encipher and found this [doc](https://imagemagick.org/s
 
 The doc specifically warns against key reuse and tells us that the encrpytion uses AES-CTR block encryption. I looked up the chaining scheme and found that CTR uses a nonce, counter, and key to basically generate a stream key that is XORed with the plaintext. 
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/CTR_encryption_2.svg/1920px-CTR_encryption_2.svg.png">
+<img src="gacha4.png">
 
 Since the password is used to generate the nonce and key, both images uses the same stream key, meaning if we XOR the two encrypted images together, we will get back the two plaintexts XORed together. I performed these operations using this [script](attack.py), giving the following file with a discernible flag.
 

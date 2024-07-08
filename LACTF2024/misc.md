@@ -17,7 +17,7 @@ This challenge links another google [form](https://docs.google.com/forms/d/e/1FA
 
 <img src="images/one-by-one.png">
 
-This hints that the answers to the questions may be the flag, so the first 6 answers are "lactf{". If we click through the questions, we eventually reach a page telling us "that was not the flag," confirming our theory that the answers to the questions are the letters themselves. This also means we will know we got the flag correct once we reach the win screen. If we go back to variable with JSON formatting where we found the flag for the previous challenge, we notice a lot of form specific data. I looked up this variable, and found a [guide](https://theconfuzedsourcecode.wordpress.com/2019/12/15/programmatically-access-your-complete-google-forms-skeleton/) on how to reverse engineer google forms using this JSON data. I copied the JSON data into a [JSON parser](https://jsoneditoronline.org/) referenced by the guide.
+This hints that the answers to the questions may be the flag, so the first 6 answers are "lactf{". If we click through the questions, we eventually reach a page telling us "that was not the flag," confirming our theory that the answers to the questions are the letters themselves. This also means we will know we got the flag correct once we reach the win screen. If we go back to the variable with JSON formatting, where we found the flag for the previous challenge, we notice a lot of form specific data. I looked up this variable and found a [guide](https://theconfuzedsourcecode.wordpress.com/2019/12/15/programmatically-access-your-complete-google-forms-skeleton/) on how to reverse engineer google forms using this JSON data. I copied the JSON data into a [JSON parser](https://jsoneditoronline.org/) referenced by the guide.
 
 <img src="images/one-by-one2.png">
 
@@ -46,6 +46,6 @@ The doc specifically warns against key reuse and tells us that the encrpytion us
 
 <img src="https://ctf101.org/cryptography/images/ctr-encryption.png">
 
-Since the password is used to generate the nonce and key, both images uses the same stream key, meaning if we XOR the two encrypted images together, we will get back the two plaintexts XORed together. I performed these operations using this [script](attack.py), giving the following file with a discernible flag.
+Since the password is used to generate the nonce and key, both images use the same stream key, meaning if we XOR the two encrypted images together, we will get back the two plaintexts XORed together. I performed these operations using this [script](attack.py), giving the following file with a discernible flag.
 
 <img src="images/gacha3.png">
